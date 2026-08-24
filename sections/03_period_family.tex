@@ -1,0 +1,425 @@
+\section{The period family over the punctured base}
+
+Let $\rho=e^{\pi i/3}$.  We use the classical modular function
+$j:\HH\to\C$, normalized by $j(i)=1728$, and the modular forms
+$E_4,E_6,\Delta_{\mathrm{mod}}$ of weights $4,6,12$ \cite[Ch.~VII]{Serre}.
+
+\subsection{The three period functions}
+
+\begin{theorem}[Periods]\label{thm:periods}
+There are holomorphic functions
+\[
+ \tau:\HH_z\to\HH,
+ \qquad
+ \mu,\beta:\HH_z\to\C
+\]
+satisfying
+\begin{align}
+ j(\tau)&=1728\,t\circ\pi,\label{eq:tau-j}\\
+ \tau\circ g_1&=\frac{\tau-1}{\tau},
+ &\tau\circ g_2&=-\frac1\tau,
+ &\tau(z_1)&=\rho,
+ &\tau(z_2)&=i,\label{eq:tau-law}\\
+ \mu\circ g_1&=\frac{1-\mu}{\tau},
+ &\mu\circ g_2&=1+\frac\mu\tau,
+ \label{eq:mu-law}\\
+ \beta\circ g_1&=\beta+2-\frac{6(1-\mu)^2}{\tau},
+ &\beta\circ g_2&=\beta-3-\frac{6\mu^2}{\tau}.
+ \label{eq:beta-law}
+\end{align}
+These laws imply
+\begin{equation}\label{eq:cusp-period-laws}
+ \tau\circ g_0=\tau-1,
+ \qquad
+ \mu\circ g_0=\mu,
+ \qquad
+ \beta\circ g_0=\beta+1.
+\end{equation}
+On the distinguished cusp component $U_r$, the functions $\mu$ and
+$\beta+\tau$ are bounded and descend holomorphically across $t_c=0$.
+The functions $\tau$ and $\mu$ are uniquely determined by these conditions,
+whereas the set of functions $\beta$ satisfying the stated conditions is
+an affine space under the additive constants.
+\end{theorem}
+
+\begin{proof}
+\smallskip
+\noindent\emph{The function $\tau$.}
+Let $\mathcal M$ denote the modular orbifold, whose coarse coordinate is
+$j$ and whose orbifold orders at $0$, $1728$, and $\infty$ are
+$3$, $2$, and $\infty$; the map $j:\HH\to\mathcal M$ is its universal
+orbifold covering.  The coarse map
+\[
+ \varphi:B\longrightarrow\PP^1,
+ \qquad \varphi(t)=1728t,
+\]
+is a holomorphic orbifold morphism from
+$(B;3,4,\infty)$ to $\mathcal M$.  We verify the local lifts and their
+isotropy homomorphisms.  Choose source uniformizers $s_1,s_2$ at
+$p_1,p_2$ so that, after multiplying them by invariant holomorphic units,
+\[
+ t=s_1^3,\qquad t-1=s_2^4.
+\]
+Choose target uniformizers $\xi_1,\xi_2$ at the orbifold points $0,1728$ so
+that $j=\xi_1^3$ and $j-1728=\xi_2^2$, again after multiplication by
+isotropy-invariant units.
+The map $\varphi$ then has local lifts of the form
+\[
+ \xi_1=s_1\cdot(\text{unit}),
+ \qquad
+ \xi_2=s_2^2\cdot(\text{unit}).
+\]
+Thus the order-three generator maps to
+$S_1=\begin{psmallmatrix}1&-1\\1&0\end{psmallmatrix}$, whose derivative
+at $\rho=e^{\pi i/3}$ is $e^{-2\pi i/3}$, while the order-four generator
+maps to
+$S=\begin{psmallmatrix}0&-1\\1&0\end{psmallmatrix}$: the action
+$s_2\mapsto-is_2$ induces $\xi_2\mapsto-\xi_2$.  At the cusp, write $q=e^{2\pi i\zeta}$ for the standard modular
+coordinate, where $\zeta\in\HH$.  Since
+$j=q^{-1}(1+O(q))$, the equation $j=1728/t_c$ determines a local lift
+\begin{equation}\label{eq:q-cusp}
+ q=t_cu_1(t_c)
+\end{equation}
+with $u_1$ a holomorphic unit.  A clockwise loop about $t_c=0$ therefore
+maps to the clockwise modular cusp generator
+$T^{-1}=\begin{psmallmatrix}1&-1\\0&1\end{psmallmatrix}$.  Equivalently,
+$g_1,g_2,g_0$ map to $S_1,S,T^{-1}$; indeed
+$(S_1S)^{-1}=T^{-1}$.
+
+The orbifold lifting theorem \cite[Chs.~7,10]{Beardon} now gives a holomorphic lift
+$\tau:\HH_z\to\HH$ equivariant for the homomorphism
+$g_1\mapsto S_1$, $g_2\mapsto S$.  It satisfies $\tau(z_1)=\rho$.
+This equivariant lift is unique: two such lifts differ by an element of
+$\mathrm{PSL}_2(\Z)$ centralizing both $S_1$ and $S$, and that common
+centralizer is trivial.  The preceding isotropy homomorphisms give
+\eqref{eq:tau-j}--\eqref{eq:tau-law}.  The local lift at $p_1$ has degree
+one, so $\tau-\rho$ has order one at $z_1$; the local lift at $p_2$ has
+degree two, so $\tau-i$ has order two at $z_2$.  On $U_r$, the cusp
+coordinate in \eqref{eq:q-cusp} is $q=e^{2\pi i\tau}$.
+
+Choose a branch of $h=(2\pi i)^{-1}\log u_1$ in
+\eqref{eq:q-cusp} and set
+\begin{equation}\label{eq:s-cusp}
+ s=\tau-h(t_c\circ\pi).
+\end{equation}
+Then $e^{2\pi is}=t_c\circ\pi$ and $s\circ g_0=s-1$.  Both
+$t_c\circ\pi:U_r\to\{0<|t_c|<r\}$ and the exponential map from a
+half-plane are universal coverings with the same deck generator.  Hence
+$s$ is a biholomorphism from $U_r$ onto a half-plane.
+
+\smallskip
+\noindent\emph{The function $\mu$.}
+Define a multiplicative cocycle $\jmath$ on $\Delta\times\HH_z$ by
+\[
+ \jmath(g_1,z)=-\tau(z),
+ \qquad
+ \jmath(g_2,z)=\tau(z),
+\]
+and the cocycle rule.  The identities for the $g_1$- and $g_2$-orbits of
+$\tau$ show that this is well defined and that $\jmath(g_0,z)=1$.
+For an open set $U\subset B$, let $\mathcal L(U)$ be the holomorphic
+functions $\nu$ on $\pi^{-1}(U\setminus\{p_0\})$ satisfying
+\[
+ \nu\circ g_1=-\frac\nu\tau,
+ \qquad
+ \nu\circ g_2=\frac\nu\tau,
+\]
+with the following additional condition when $p_0\in U$: on the
+distinguished cusp component, $\nu$ descends as a function of $t_c$ and
+extends holomorphically across $t_c=0$.  These spaces form a sheaf of
+$\cO_B$-modules, denoted $\mathcal L$.
+We claim
+\begin{equation}\label{eq:L-minus-one}
+ \mathcal L\cong\cO_B(-p_0)\cong\cO_{\PP^1}(-1).
+\end{equation}
+Indeed, since $\HH_z$ is simply connected and $E_6\circ\tau$ has zeros
+of even order, choose a holomorphic square root and set
+\[
+ F=\left(\frac{E_4^2E_6^{1/2}}{\Delta_{\mathrm{mod}}}\right)\circ\tau.
+\]
+Choose lifts to $\mathrm{SL}_2(\Z)$ of the images of $g_1$ and
+$g_2$ in $\mathrm{PSL}_2(\Z)$.  The numerator and denominator in the
+definition of $F$ have total modular weights $11$ and $12$; hence their
+quotient has weight $-1$.  The sign of the chosen square root of $E_6$
+and the sign of an $\mathrm{SL}_2(\Z)$-lift combine into constants
+$\chi_j\in\{\pm1\}$ for which
+\[
+ F\circ g_j=\frac{\chi_jF}{\jmath(g_j)}.
+\]
+Iterating around $g_1^3=1$ gives $\chi_1^3=1$, hence $\chi_1=1$.
+At $z_2$, the function $E_6^{1/2}\circ\tau$ has a simple zero in the
+linearizing coordinate $s_2$, and $s_2\circ g_2=-is_2$.  The weight-three
+automorphy factor at $z_2$ is $\tau(z_2)^3=i^3=-i$, so comparison of the
+linear terms gives $\chi_2=1$.  Thus $F$ satisfies the homogeneous laws
+defining $\mathcal L$.
+
+The function $F$ has order $2$ at $z_1$, order $1$ at $z_2$, and is
+$t_c^{-1}$ times a unit at the cusp.  If $\nu$ is another local
+homogeneous solution, then $\nu/F$ is $\Delta$-invariant and hence a
+meromorphic function of $t$.  At $p_1$ a pole of $\nu/F$ would lift to a
+pole of order at most $2$ in the coordinate $s_1$, hence of order at most
+$2/3$ in $t$; no integral pole order is possible.  The same argument at
+$p_2$ gives the bound $1/4$.  At $p_0$, regularity of $\nu$ and the simple
+pole of $F$ force the quotient to vanish.  Thus
+$\mathcal L_{p_0}=\mathfrak m_{p_0}F$ and $F$ generates elsewhere,
+proving \eqref{eq:L-minus-one}.
+
+The affine transformation laws \eqref{eq:mu-law} are consistent with
+$g_1^3=g_2^4=1$.  Explicitly, iteration gives
+\[
+\begin{array}{c|ccc}
+ &z&g_1z&g_1^2z\\ \hline
+\tau&\tau&(\tau-1)/\tau&-1/(\tau-1)\\
+\mu&\mu&(1-\mu)/\tau&(\tau-1+\mu)/(\tau-1)
+\end{array}
+\]
+and
+\[
+\begin{array}{c|cccc}
+ &z&g_2z&g_2^2z&g_2^3z\\ \hline
+\tau&\tau&-1/\tau&\tau&-1/\tau\\
+\mu&\mu&1+\mu/\tau&1-\tau-\mu&(1-\mu)/\tau.
+\end{array}
+\]
+A direct substitution gives
+\[
+ \mu\circ(g_1g_2)=\mu,
+ \qquad\text{hence}\qquad
+ \mu\circ g_0=\mu.
+\]
+Consequently the local solutions form a torsor under $\mathcal L$.
+On a disc avoiding the three special points, prescribe a holomorphic
+function on one lift and extend it by the affine laws.  At the cusp the
+identity $\mu\circ g_0=\mu$ makes the choice $\mu=0$ consistent on the
+distinguished component.  On invariant discs at the elliptic points use
+\[
+ \mu_1=\frac{2-\tau}{3},
+ \qquad
+ \mu_2=\frac{1-\tau}{2}.
+\]
+Since $H^1(B,\mathcal L)=0$, the torsor has a global section; since
+$H^0(B,\mathcal L)=0$, it is unique.  At the cusp it is bounded and hence
+extends holomorphically.  Evaluating at the elliptic fixed points gives
+\begin{equation}\label{eq:mu-values}
+ \mu(z_1)=\frac1{1+\rho},
+ \qquad
+ \mu(z_2)=\frac{1-i}{2},
+\end{equation}
+and therefore
+\[
+ 6(1-\mu(z_1))^2=2\tau(z_1),
+ \qquad
+ 6\mu(z_2)^2=-3\tau(z_2).
+\]
+
+\smallskip
+\noindent\emph{The function $\beta$.}
+Put
+\[
+ \phi_1=2-\frac{6(1-\mu)^2}{\tau},
+ \qquad
+ \phi_2=-3-\frac{6\mu^2}{\tau}.
+\]
+Substitution of the preceding orbit tables gives
+\begin{align*}
+ \phi_1\circ g_1&=2-\frac{6(\tau-1+\mu)^2}{\tau(\tau-1)},
+ &\phi_1\circ g_1^2&=2+\frac{6\mu^2}{\tau-1},\\
+ \phi_2\circ g_2&=-3+\frac{6(\tau+\mu)^2}{\tau},
+ &\phi_2\circ g_2^2&=-3-\frac{6(1-\tau-\mu)^2}{\tau},\\
+ \phi_2\circ g_2^3&=-3+\frac{6(1-\mu)^2}{\tau}.
+\end{align*}
+A common-denominator calculation yields
+\[
+ \sum_{k=0}^2\phi_1\circ g_1^k=0,
+ \qquad
+ \sum_{k=0}^3\phi_2\circ g_2^k=0.
+\]
+Moreover \eqref{eq:mu-values} gives $\phi_j(z_j)=0$.  Substituting the
+transformation laws once more gives
+\[
+ \beta\circ(g_1g_2)=\beta-1,
+ \qquad
+ \beta\circ g_0=\beta+1.
+\]
+Since $\tau\circ g_0=\tau-1$, the function $\beta+\tau$ is
+$g_0$-invariant.  Hence the local solutions of \eqref{eq:beta-law}, with
+$\beta+\tau$ extending at $p_0$, form a torsor under $\cO_B$.  At the
+cusp the choice $\beta=-\tau$ is consistent with the induced $g_0$-law.
+On a simply covered disc choose an arbitrary solution, and at $p_j$ use
+\[
+ \beta_j=\frac1{m_j}\sum_{k=0}^{m_j-1}k\,\phi_j\circ g_j^k.
+\]
+Since $H^1(B,\cO_B)=0$, a global solution exists, and all solutions differ
+by constants.
+\end{proof}
+
+\subsection{Equivariance and the torus family}
+Define
+\[
+ \Pi(z)=
+ \begin{pmatrix}
+ 6\mu(z)&\tau(z)&1&0\\
+ \beta(z)&\mu(z)&0&1
+ \end{pmatrix}
+ =[Z(z)\mid I_2].
+\]
+Regard its rows as the linear forms
+\[
+ \sigma_1=6\mu\gamma+\tau u+w,
+ \qquad
+ \sigma_2=\beta\gamma+\mu u+\delta
+ \quad\text{in }V\otimes\C.
+\]
+
+\begin{proposition}[Equivariance]\label{prop:period-equivariance}
+For the generators of $\Delta$ one has
+\[
+ R_1(z)=
+ \begin{pmatrix}
+ -1/\tau&0\\
+ (1-\mu)/\tau&1
+ \end{pmatrix},
+ \qquad
+ R_2(z)=
+ \begin{pmatrix}
+ 1/\tau&0\\
+ -\mu/\tau&1
+ \end{pmatrix},
+ \qquad R_0=I_2,
+\]
+and
+\begin{equation}\label{eq:period-equivariance}
+ \Pi(gz)=R_g(z)\Pi(z)M_g,
+ \qquad M_g=\rho_V(g)^t.
+\end{equation}
+The matrices satisfy $R_{gh}(z)=R_g(hz)R_h(z)$.
+\end{proposition}
+
+\begin{proof}
+Using the matrices of \cref{prop:linear-algebra},
+\[
+\begin{aligned}
+T_1\sigma_1&=(6\mu-6)\gamma+(1-\tau)u-\tau w,\\
+T_1\sigma_2&=(\beta+2)\gamma+(1-\mu)u+(1-\mu)w+\delta,\\
+T_2\sigma_1&=(6\mu+6\tau)\gamma-u+\tau w,\\
+T_2\sigma_2&=(\beta+6\mu-3)\gamma+u+\mu w+\delta.
+\end{aligned}
+\]
+Substituting \eqref{eq:tau-law}--\eqref{eq:beta-law} gives
+\[
+ \sigma_1(g_1z)=-\tau^{-1}T_1\sigma_1,
+ \quad
+ \sigma_2(g_1z)=T_1\sigma_2+(1-\mu)\tau^{-1}T_1\sigma_1,
+\]
+and the analogous formulas for $g_2$.  For $g_0$ one obtains
+$\sigma_i(g_0z)=T_0\sigma_i(z)$.  Evaluating on $\Lambda$ gives
+\eqref{eq:period-equivariance}; the cocycle rule follows by uniqueness.
+\end{proof}
+
+\begin{corollary}[Choice of the additive constant]
+\label{cor:nondegenerate-periods}
+The function $\beta$ may be chosen so that
+\begin{equation}\label{eq:D-negative}
+ D:=\Im\beta-\frac{6(\Im\mu)^2}{\Im\tau}<0
+ \qquad\text{on }\HH_z.
+\end{equation}
+For this choice, $L(z)=\Pi(z)\Lambda$ is a lattice in $\C^2$ for every
+$z\in\HH_z$.
+\end{corollary}
+
+\begin{proof}
+As a real linear map $\Lambda\otimes\R\to\C^2$,
+\begin{equation}\label{eq:real-det}
+ \det_{\R}\Pi(z)=-\det\Im Z(z)=\Im\tau(z)\,D(z).
+\end{equation}
+For both generators,
+\[
+ |\det_{\C}R_g(z)|^2=|\tau(z)|^{-2},
+ \qquad
+ \Im\tau(gz)=\Im\tau(z)|\tau(z)|^{-2}.
+\]
+Taking real determinants in \eqref{eq:period-equivariance} and using
+$\det M_g=1$, comparison with \eqref{eq:real-det} therefore gives
+$D(gz)=D(z)$.  Thus $D$ is $\Delta$-invariant.  Since $\tau,\mu,\beta$ are holomorphic at the
+elliptic fixed points, it descends continuously to
+$B\setminus\{p_0\}$.  At the cusp, $\beta+\tau$ and $\mu$ are bounded
+while $\Im\tau\to\infty$, so $D\to-\infty$.  Hence $D$ is bounded
+above on $\HH_z$ modulo $\Delta$.  Replacing $\beta$ by
+$\beta+c_0$ adds $\Im c_0$ to $D$; a sufficiently negative imaginary
+constant gives \eqref{eq:D-negative}.  Formula \eqref{eq:real-det} then
+shows that $\Pi(z)$ is a real isomorphism for every $z$, so its integral
+columns form a lattice in $\C^2$.
+\end{proof}
+
+Define
+\[
+ \mathcal T=(\HH_z\times\C^2)/\Lambda,
+ \qquad
+ t_\lambda(z,\zeta)=(z,\zeta+\Pi(z)\lambda).
+\]
+The lattice action is free and properly discontinuous.  Indeed, over a
+compact subset of $\HH_z$, the real isomorphisms $\Pi(z)$ and their
+inverses are uniformly bounded.  Hence, for compact subsets of
+$\HH_z\times\C^2$, only finitely many lattice translations can produce
+an intersection.  Thus $\mathcal T$ is a complex manifold and the
+projection $\mathcal T\to\HH_z$ is a holomorphic family of compact
+complex two-tori.  We use the same notation $t_\lambda$ for the
+corresponding fibre loop in fundamental-group calculations.  The maps
+\[
+ \wt g(z,\zeta)=(gz,R_g(z)\zeta)
+\]
+normalize the lattice action.  Let
+$\HH_z^\circ$ be the complement of the $\Delta$-orbits of $z_1,z_2$.
+
+\begin{corollary}\label{cor:smooth-family}
+The quotient
+\[
+ J=(\mathcal T|_{\HH_z^\circ})/\Delta
+ \longrightarrow B^\circ
+\]
+is a proper holomorphic submersion with fibres complex two-tori and a
+holomorphic zero section.  In the marking $H_1(F;\Z)=\Lambda$, the
+clockwise meridians about $p_1,p_2,p_0$ have monodromies
+$A_1,A_2,M_0$.
+\end{corollary}
+
+\begin{proof}
+The action on $\HH_z^\circ$ is free and properly discontinuous, hence so
+is the induced action on the torus family.  Over a simply connected disc
+$U\Subset B^\circ$, choose one lift $\widetilde U\subset\HH_z^\circ$.
+The quotient above $U$ is then the family
+$(\widetilde U\times\C^2)/\Lambda$, with lattice generators depending
+holomorphically on the base.  A fixed real fundamental parallelepiped for
+$\Lambda\otimes\R/\Lambda$, transported by $\Pi(z)$, gives a compact
+set surjecting onto the inverse image of every compact subset of $U$.
+Thus the map is proper locally on the base, hence proper globally.  The
+same local description shows that it is a holomorphic submersion and that
+the zero section descends.
+
+Parallel transport in the trivial marked family over $\HH_z^\circ$,
+followed by the identification through $\wt g$, acts on the lattice by
+$M_g^{-1}$, which is $A_j$ for $g_j$ and $M_0$ for $g_0$.
+\end{proof}
+
+\subsection{The period normal form at the cusp}
+On $U_r$ put $b=\beta+\tau$.  The functions $\mu,b,h$ are holomorphic in
+$t_c$, and with
+\[
+ C(t_c)=
+ \begin{pmatrix}
+ 6\mu(t_c)&h(t_c)\\
+ b(t_c)-h(t_c)&\mu(t_c)
+ \end{pmatrix}
+\]
+one has
+\begin{equation}\label{eq:cusp-normal-form}
+ Z(z)=s(z)B_0+C(t_c\circ\pi(z)).
+\end{equation}
+Consequently, for $\ol\lambda\in\ol\Lambda\cong\Z^2$,
+\begin{equation}\label{eq:cusp-exponential}
+ \exp(2\pi iZ\ol\lambda)
+ =t_c^{B_0\ol\lambda}c_{\ol\lambda}(t_c),
+ \qquad
+ c_{\ol\lambda}(t_c)=\exp(2\pi iC(t_c)\ol\lambda).
+\end{equation}
+

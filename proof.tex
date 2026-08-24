@@ -1,0 +1,85 @@
+\documentclass[11pt]{amsart}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{aliascnt}
+
+\newtheorem{theorem}{Theorem}[section]
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\HH}{\mathfrak H}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\rk}{\operatorname{rk}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\ol}{\overline}
+\newcommand{\eps}{\varepsilon}
+
+\title[A compact complex threefold diffeomorphic to $S^6$]
+{A compact complex threefold diffeomorphic to the six-sphere}
+\author[ChatGPT Sol 5.6 PRO]{Streamlining by ChatGPT Sol 5.6 PRO of Anthropic's original proof, as communicated by Levent Alpoge}
+\date{}
+
+\begin{document}
+\begin{abstract}
+We construct a compact complex threefold fibred by complex two-tori over
+$\mathbb P^1$.  The fibration has one reduced, nonnormal normal crossings fibre and
+two multiple fibres of multiplicities $3$ and $4$.  We prove that
+the total space is simply connected and compute its integral cohomology by
+the Leray spectral sequence.  The local calculation at the nonnormal fibre
+is carried out integrally by nearby cycles.  The total space is an integral
+homology six-sphere and hence is diffeomorphic to the standard $S^6$.
+\end{abstract}
+
+\maketitle
+
+\input{sections/01_statement}
+\input{sections/02_monodromy}
+\input{sections/03_period_family}
+\input{sections/04_cusp_filling}
+\input{sections/05_finite_fillings}
+\input{sections/06_fundamental_group}
+\input{sections/07_integral_cohomology}
+\input{sections/08_recognition}
+
+\appendix
+\input{appendices/A_nearby_cycles}
+\input{appendices/B_matrix_calculations}
+
+\input{references}
+
+\end{document}

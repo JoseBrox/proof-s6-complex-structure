@@ -1,0 +1,316 @@
+\section{Integral nearby cycles at the cusp}\label{sec:nearby-cycles}
+
+Let $\psi=R\psi_{f_0}\Z$ be the nearby-cycle complex on $W$ in the
+analytic topology \cite[Ch.~4]{Dimca}.  Proper base change gives
+\[
+ \mathbb H^*(W,\psi)\cong H^*(F;\Z),
+\]
+and the edge map
+$H^q(W;\Z)\to H^q(F;\Z)$ is the specialization map.
+
+\subsection{The cohomology sheaves of nearby cycles}
+At a point of $W$, the map $f_0$ has one of the local forms
+\[
+ z_0,
+ \qquad
+ z_0z_1,
+ \qquad
+ z_0z_1z_2.
+\]
+Writing $z_i=r_ie^{i\theta_i}$, the radial constraint in the Milnor
+fibre of $z_0\cdots z_k=t$ is an open simplex, while the phase constraint
+$\theta_0+\cdots+\theta_k=\arg t$ is a $k$-torus.  Thus the three local
+Milnor fibres are homotopy equivalent to a point, $S^1$, and $T^2$.
+Therefore
+\[
+ \cH^0\psi=\Z_W,
+ \qquad
+ \cH^1\psi=\cV,
+ \qquad
+ \cH^2\psi=\Z_P\oplus\Z_Q,
+\]
+where $P,Q$ are the two triple points and $\cV$ is supported on the double
+locus $D=D_1\cup D_2\cup D_3$.  Write $\iota_k:D_k\hookrightarrow W$ for
+the inclusions.
+
+Number the six sides of the hexagon cyclically by
+$C_1,\ldots,C_6$ and let $D_k$ be the common image of $C_k$ and
+$C_{k+3}$, for $k=1,2,3$.  The normalization distinguishes the two
+branches globally along $D_k\setminus\{P,Q\}$, so the vanishing-cycle
+local system there is trivial.  Orient its generator by increasing
+argument on the branch coming from $C_k$.  At either triple
+point the three restriction values
+$n_1,n_2,n_3$ satisfy
+\[
+ n_1-n_2+n_3=0.
+\]
+Indeed, in the local model $z_0z_1z_2=t$, the three vanishing circles have
+homology classes $e_0-e_1$, $e_0-e_2$, $e_1-e_2$ in
+$\{(a_0,a_1,a_2)\in\Z^3:\sum a_i=0\}$.  The global signs are as follows.
+The three preimages of $P$ are
+$C_1\cap C_2$, $C_3\cap C_4$, and $C_5\cap C_6$; call the corresponding
+normalization branches $b_0,b_1,b_2$.  Thus the ordered branch pairs
+defining $D_1,D_2,D_3$ are
+$(b_0,b_1),(b_0,b_2),(b_1,b_2)$, giving the three differences above.
+The preimages of $Q$ are
+$C_2\cap C_3$, $C_4\cap C_5$, and $C_6\cap C_1$; call the corresponding
+branches $c_0,c_1,c_2$.  The ordered pairs are then
+$(c_2,c_1),(c_0,c_1),(c_0,c_2)$.  The corresponding differences are
+$e_2-e_1,e_0-e_1,e_0-e_2$, and again satisfy
+$n_1-n_2+n_3=0$.  Hence there is an exact sequence
+\begin{equation}\label{eq:V-resolution}
+ 0\longrightarrow\cV\longrightarrow
+ \bigoplus_{k=1}^3\iota_{k*}\Z_{D_k}
+ \xrightarrow{d}
+ \Z_P\oplus\Z_Q\longrightarrow0,
+ \qquad
+ d(n_1,n_2,n_3)=(n_1-n_2+n_3,n_1-n_2+n_3).
+\end{equation}
+
+Exactness is stalkwise.  Away from $P,Q$ the restriction map is an
+isomorphism onto the single local branch of the double locus.  At a triple
+point the stalk of $\cV$ is
+$\Hom(\{(a_0,a_1,a_2)\in\Z^3:\sum a_i=0\},\Z)$, and the three
+restriction homomorphisms are evaluation on the three differences above.
+Their image is exactly the kernel of $n_1-n_2+n_3$, and that linear form
+is primitive, so the cokernel is $\Z$.
+
+\subsection{The cohomology of the central fibre}
+Let $\nu:dP_6\to W$ be the normalization.  For a locally constant
+function on the normalization, define its $k$-th difference to be the
+restriction to $C_k$ minus the restriction to $C_{k+3}$, transported to
+$D_k$.  With this difference map and the map $d$ of
+\eqref{eq:V-resolution}, the normalization complex is
+\begin{equation}\label{eq:W-normalization-resolution}
+ 0\longrightarrow\Z_W\longrightarrow\nu_*\Z_{dP_6}
+ \longrightarrow\bigoplus_{k=1}^3\iota_{k*}\Z_{D_k}
+ \xrightarrow{d}\Z_P\oplus\Z_Q\longrightarrow0.
+\end{equation}
+
+This is again exact on stalks.  At a smooth point it is
+$0\to\Z\to\Z\to0$; at a general double point it is the augmented
+cochain complex of an interval,
+$0\to\Z\to\Z^2\to\Z\to0$; and at a triple point it is the
+augmented cochain complex of a two-simplex,
+$0\to\Z\to\Z^3\to\Z^3\to\Z\to0$.
+The signs are the same as in \eqref{eq:V-resolution} because both
+complexes use the same ordering of the local branches.  Since $\nu$ is
+finite, proper base change gives $R^r\nu_*\Z=0$ for $r>0$; the same
+vanishing is immediate for the closed embeddings $\iota_k$ and for the
+point inclusions.  Thus the sheaf cohomology of the terms in
+\eqref{eq:W-normalization-resolution} is the ordinary cohomology of
+$dP_6$, the curves $D_k$, and the points $P,Q$.
+
+The map in degree two
+$H^2(dP_6;\Z)\to\bigoplus_kH^2(D_k;\Z)=\Z^3$ sends a divisor to the
+differences of its intersection numbers with opposite sides of the
+hexagon.  Writing $dP_6$ as the blow-up of $\PP^2$ at three points, with
+basis $H,E_1,E_2,E_3$, the six sides are
+\[
+ E_1,
+ H-E_1-E_2,
+ E_2,
+ H-E_2-E_3,
+ E_3,
+ H-E_1-E_3.
+\]
+For $L=aH-\sum b_iE_i$, the difference map is
+\[
+ L\longmapsto(s,-s,s),
+ \qquad s=b_1+b_2+b_3-a.
+\]
+Its image is the saturated subgroup $\Z(1,-1,1)$.
+The hypercohomology spectral sequence is explicit.  In sheaf-cohomology degree zero,
+the complex of global sections is
+\[
+ \Z\longrightarrow\Z^3\xrightarrow{(a_1,a_2,a_3)\mapsto
+ (a_1-a_2+a_3)(1,1)}\Z^2,
+\]
+with first map zero.  Its cohomology has ranks $1,2,1$ in complex degrees
+$0,1,2$; this is the cohomology of the dual cell complex, a torus with one
+vertex, three edges and two faces.  The degree-two row is
+\[
+ H^2(dP_6;\Z)=\Z^4\longrightarrow\Z^3,
+\]
+with saturated rank-one image, hence kernel $\Z^3$ and cokernel
+$\Z^2$.  The degree-four row is $H^4(dP_6;\Z)=\Z$.  The resolution has only
+three nonzero terms after $\Z_W$, in complex degrees $0,1,2$.  Hence
+$d_r=0$ for $r\geq3$, while the only possible $d_2$ has target in an odd
+cohomology row and therefore vanishes.  The spectral sequence degenerates
+at $E_2$.  All surviving groups are free, so there is no extension
+torsion.  Therefore
+\begin{equation}\label{eq:W-cohomology-ranks}
+ H^q(W;\Z)=\Z,\ \Z^2,\ \Z^4,\ \Z^2,\ \Z
+ \quad(q=0,1,2,3,4),
+\end{equation}
+with no torsion.
+
+From \eqref{eq:V-resolution} and $H^*(\PP^1;\Z)=(\Z,0,\Z)$ one obtains
+\begin{equation}\label{eq:V-cohomology}
+ H^q(W;\cV)=\Z^2,\ \Z,\ \Z^3,\ 0
+ \quad(q=0,1,2,3).
+\end{equation}
+
+\subsection{The nearby-cycle spectral sequence}
+The spectral sequence
+\[
+ E_2^{a,b}=H^a(W;\cH^b\psi)\Longrightarrow H^{a+b}(F;\Z)
+\]
+has the following free $E_2$-terms, displayed by rank:
+\[
+\begin{array}{c|ccccc}
+b=2&2&0&0&0&0\\
+b=1&2&1&3&0&0\\
+b=0&1&2&4&2&1\\ \hline
+&a=0&a=1&a=2&a=3&a=4.
+\end{array}
+\]
+Let
+\begin{align*}
+ \alpha&=\rk(d_2:E_2^{0,1}\to E_2^{2,0}),
+ &\beta&=\rk(d_2:E_2^{1,1}\to E_2^{3,0}),\\
+ \gamma&=\rk(d_2:E_2^{2,1}\to E_2^{4,0}),
+ &\delta&=\rk(d_2:E_2^{0,2}\to E_2^{2,1}),\\
+ \epsilon&=\rk(d_3:E_3^{0,2}\to E_3^{3,0}).
+\end{align*}
+These are the only possible nonzero differentials.  Since the Betti
+numbers of $F=T^4$ are $(1,4,6,4,1)$, total-degree bookkeeping gives
+\[
+ 4=2+(2-\alpha),
+ \qquad
+ 1=1-\gamma,
+\]
+so $\alpha=\gamma=0$.  In total degrees two and three one obtains
+\[
+ 6=(4-\alpha)+(1-\beta)+(2-\delta-\epsilon),
+\]
+\[
+ 4=(2-\beta-\epsilon)+(3-\gamma-\delta).
+\]
+Hence
+\[
+ \beta+\delta+\epsilon=1.
+\]
+Thus specialization is already injective in degrees $0,1,2,4$, and
+exactly one rank-one differential remains among
+\[
+ E_2^{1,1}\to E_2^{3,0},
+ \qquad
+ E_2^{0,2}\to E_2^{2,1},
+ \qquad
+ E_3^{0,2}\to E_3^{3,0}.
+\]
+It remains to control specialization in degree three.
+
+\begin{lemma}[Specialization with supports]\label{lem:specialization-supports}
+Let $K$ be a compact subset of the smooth locus of $W$.  After shrinking
+the base disc, there are a neighbourhood $K'$ of $K$ in $W$ and an open
+embedding
+\[
+ \Theta:K'\times\Delta_r\longrightarrow N_0,
+ \qquad f_0(\Theta(w,t))=t,
+ \qquad \Theta(w,0)=w.
+\]
+If a compact group acts on $N_0$, preserves $f_0$ and $K$, then $K'$ and
+$\Theta$ may be chosen equivariantly.  For
+$K_t=\Theta(K\times\{t\})$, the composite
+\[
+ H^q(W,W\setminus K)\longrightarrow H^q(W)
+ \xrightarrow{\operatorname{sp}^q}H^q(F_t)
+\]
+equals, under transport by $\Theta$,
+\[
+ H^q(F_t,F_t\setminus K_t)\longrightarrow H^q(F_t).
+\]
+\end{lemma}
+
+\begin{proof}
+Choose a relatively compact neighbourhood of $K$ on which $f_0$ is a
+submersion and a Riemannian metric there.  If a compact group is present,
+replace the neighbourhood by its group saturation and average the metric
+over the group.  Let $\xi_1,\xi_2$ be the horizontal lifts of
+$\partial/\partial\Re t$ and $\partial/\partial\Im t$.  For
+$t\in\C$ set
+\[
+ \xi_t=(\Re t)\xi_1+(\Im t)\xi_2.
+\]
+Then $df_0(\xi_t)=t$.  For $r>0$ sufficiently small, the time-one flow of
+$\xi_t$ is defined on a fixed neighbourhood $K'$ of $K$ for all
+$|t|<r$.  Put
+\[
+ \Theta(w,t)=\operatorname{Fl}^{1}_{\xi_t}(w).
+\]
+Along the flow, $f_0$ has derivative $t$, so
+$f_0(\Theta(w,t))=t$.  At $t=0$ the map is the identity.  If
+$\Theta(w,t)=\Theta(w',t')$, applying $f_0$ gives $t=t'$, and injectivity
+of the time-one flow of the fixed vector field $\xi_t$ then gives
+$w=w'$.  The differential of $\Theta$ is invertible along
+$K\times\{0\}$; after shrinking $K'$ and $r$, it is therefore an open
+embedding.  The construction is equivariant when the metric is.
+
+Let $Z=\Theta(K\times\Delta_r)$.  The restriction
+$\Theta|_{K\times\Delta_r}$ is proper: for a compact subset $L$ of
+$f_0^{-1}(\Delta_r)$, its inverse image is a closed subset of the compact
+set $K\times f_0(L)$.  Hence $Z$ is closed in $f_0^{-1}(\Delta_r)$.  Excision identifies the relative
+cohomology of $(f_0^{-1}(\Delta_r),f_0^{-1}(\Delta_r)\setminus Z)$ with
+that of the product pair
+$(K'\times\Delta_r,(K'\setminus K)\times\Delta_r)$.  Restriction to the
+slices $t=0$ and $t\ne0$ is an isomorphism by homotopy invariance.  The
+specialization map is obtained by restricting from a sufficiently small
+tube to a nearby fibre, so these identifications give the asserted
+commutative diagram.
+\end{proof}
+
+Let $K\cong T^2$ be an orbit of the compact torus
+$T_f=\Lambda_{\mathrm{tor}}\otimes S^1$ in the open torus orbit of $W$.
+The open orbit is $(\C^*)^2$, so the normal bundle of $K$ in the smooth
+four-manifold $W^\circ$ is trivial.  Apply the equivariant part of
+\cref{lem:specialization-supports}; then $K_t$ is a $T_f$-orbit in the
+nearby torus.  The composite
+\[
+ H^3(W,W\setminus K)\longrightarrow H^3(W)
+ \xrightarrow{\operatorname{sp}^3}H^3(F)
+\]
+is the Gysin map of the transported orbit $K_t\subset F$.  The Thom
+isomorphism identifies the source with $H^1(K)$.
+
+Under the exponential coordinates of
+\cref{prop:cusp-identification}, the $T_f$-action on a nearby fibre is
+translation by
+$(\Lambda_{\mathrm{tor}}\otimes\R)/\Lambda_{\mathrm{tor}}$.
+Consequently $K_t$ corresponds to the saturated sublattice
+$\Lambda_{\mathrm{tor}}\subset\Lambda$.  Choose a complementary
+sublattice $\Lambda'$, so
+$F\cong K_t\times T_B$ with
+$T_B=(\Lambda'\otimes\R)/\Lambda'$.  Under this product decomposition,
+the Gysin map is
+\[
+ H^1(K_t)\longrightarrow H^3(F),
+ \qquad a\longmapsto a\smile[T_B]^*.
+\]
+Its image is a direct summand of the Künneth decomposition and is therefore
+a saturated rank-two subgroup.  The composite through $H^3(W)$ has rank
+two, while $H^3(W)$ is free of rank two; hence
+$\operatorname{sp}^3$ is injective.  Its image contains the saturated
+rank-two Gysin image and has the same rank, so the two images coincide.
+In particular the specialization image is saturated.  Hence both
+possible differentials landing in $E^{3,0}$ vanish:
+$\beta=\epsilon=0$.  Therefore $\delta=1$, and the unique rank-one
+differential is $E_2^{0,2}\to E_2^{2,1}$.
+
+It follows that specialization is injective in every degree.  Its image is
+saturated.  In degree one,
+$H^1(F)/\im(\operatorname{sp}^1)=E_\infty^{0,1}=\Z^2$ is free.  In
+degree two, the filtration quotient
+$H^2(F)/\im(\operatorname{sp}^2)$ has successive graded pieces
+$E_\infty^{1,1}=\Z$ and
+$E_\infty^{0,2}=\ker(d_2:\Z^2\to\Z^3)$, both free; hence the whole
+quotient is free.  Degree three was just proved, and in degree four the
+edge map is an isomorphism.  Every specialized class is $T_0$-invariant.
+By
+\cref{prop:linear-algebra}(vi), the invariant ranks are
+$1,2,4,2,1$, exactly the ranks in \eqref{eq:W-cohomology-ranks}.  Since the
+invariant lattices are saturated, the saturated specialization image of
+the same rank equals the full invariant lattice.  This proves
+\cref{thm:cusp-specialization}.
+

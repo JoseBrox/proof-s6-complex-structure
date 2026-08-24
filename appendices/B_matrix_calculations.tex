@@ -1,0 +1,89 @@
+\section{Integral matrix calculations}\label{sec:matrix-tables}
+All groups are written in the ordered bases introduced in
+\cref{prop:linear-algebra}.
+
+The images on the lattice are
+\[
+ (A_1-I)\Lambda
+ =\langle-\wh u-\wh w+\wh\delta,
+             \wh u-2\wh w\rangle,
+\]
+\[
+ (A_2-I)\Lambda
+ =\langle-\wh u+\wh w,
+             -\wh u-\wh w+\wh\delta\rangle.
+\]
+The relevant $2\times2$ minors have greatest common divisor one, so both
+subgroups are saturated.  On $V$,
+\[
+ (T_1-I)V=\langle2\gamma+u+w,2\gamma-u\rangle,
+ \qquad
+ (T_2-I)V=\langle-3\gamma+u,u+w\rangle.
+\]
+Their sum is the saturated lattice $\langle\gamma,u,w\rangle$.
+
+In the degree-two basis
+$(\gamma u,\gamma w,\gamma\delta,uw,u\delta,w\delta)$, direct
+application of the exterior-square matrices gives
+\[
+ (\textstyle\bigwedge^2T_1-I)\bigwedge^2V
+ =\langle
+ \gamma u,\gamma w,
+ 2u\delta+w\delta,
+ uw+u\delta-w\delta-6\gamma\delta
+ \rangle,
+\]
+\[
+ (\textstyle\bigwedge^2T_0-I)\bigwedge^2V
+ =\langle\gamma u,\gamma w+u\delta\rangle.
+\]
+Together, the images of $\bigwedge^2T_1-I$ and
+$\bigwedge^2T_2-I$ generate
+\[
+ \langle\gamma u,\gamma w,u\delta,w\delta,
+ uw-6\gamma\delta\rangle.
+\]
+Adjoining $\gamma\delta$ to these five generators gives a basis of
+$\bigwedge^2V$; hence this rank-five lattice is saturated.  This proves
+$(\bigwedge^2V)_G=\Z[\gamma\delta]$ and
+$[uw]=6[\gamma\delta]$.  Solving the kernel equations gives
+\[
+ (\textstyle\bigwedge^2V)^{T_0}
+ =\langle\gamma u,\gamma\delta,uw,\gamma w-u\delta\rangle,
+\]
+\[
+ (\textstyle\bigwedge^2V)^{T_j}
+ =\langle\gamma\psi_j,q\rangle.
+\]
+The intersection of the two lattices for $j=1,2$ is $\Z q$: comparison of
+the $\gamma w$- and $\gamma u$-coefficients forces the coefficient of
+$\gamma\psi_j$ to vanish.  Thus
+$(\bigwedge^2V)^G=\Z q$.  The products are
+\[
+ (\gamma\psi_1)q=3\vol,
+ \qquad
+ (\gamma\psi_2)q=2\vol,
+ \qquad
+ q^2=12\vol.
+\]
+
+The invariant generator $\vol\in\bigwedge^4V$ identifies
+$\bigwedge^3V$ equivariantly with the contragredient lattice $\Lambda$.  Hence
+$(\bigwedge^3V)^G=\Z\gamma uw$ and
+$(\bigwedge^3V)_G=\Z[uw\delta]$, with no torsion, by
+\cref{prop:linear-algebra}(v).  Directly,
+\[
+ (\textstyle\bigwedge^3V)^{T_0}
+ =\langle\gamma uw,\gamma u\delta\rangle,
+\]
+\[
+ (\textstyle\bigwedge^3V)^{T_1}
+ =\langle\gamma uw,-uw\delta+2\gamma w\delta+4\gamma u\delta\rangle,
+\]
+\[
+ (\textstyle\bigwedge^3V)^{T_2}
+ =\langle\gamma uw,-uw\delta+3\gamma w\delta+3\gamma u\delta\rangle.
+\]
+Pairing these bases with $(\gamma,\psi_1)$ and
+$(\gamma,\psi_2)$ gives determinants $-3$ and $-2$, respectively.
+

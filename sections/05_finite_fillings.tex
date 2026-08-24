@@ -1,0 +1,215 @@
+\section{The finite fillings and the compact complex threefold}
+
+\subsection{Free logarithmic transforms}
+For $j=1,2$, choose a $g_j$-invariant disc $\Delta_j\ni z_j$ and a
+coordinate $s_j$ such that
+\[
+ s_j(z_j)=0,
+ \qquad
+ s_j\circ g_j=e^{-2\pi i/m_j}s_j.
+\]
+The quotient coordinate $t_j$ on $D_j=\Delta_j/\langle g_j\rangle$ is
+defined by $t_j\circ\pi=s_j^{m_j}$.  Let
+\[
+ J'_j=(\Delta_j\times\C^2)/\Lambda
+\]
+be the restriction of the marked torus family.  Define
+\begin{equation}\label{eq:log-action}
+ \wt g_j^{\mathrm{log}}(z,\zeta)
+ =\left(g_jz,R_j(z)\zeta+\frac1{m_j}\Pi(g_jz)v_j\right).
+\end{equation}
+The identity
+$R_j(z)\Pi(z)=\Pi(g_jz)A_j$ implies
+\[
+ \wt g_j^{\mathrm{log}}\,t_\lambda
+ =t_{A_j\lambda}\,\wt g_j^{\mathrm{log}},
+\]
+so \eqref{eq:log-action} descends to $J'_j$.  In the smooth
+trivialization
+\[
+ \Delta_j\times(\Lambda\otimes\R)/\Lambda\longrightarrow J'_j,
+ \qquad (z,x)\longmapsto[(z,\Pi(z)x)],
+\]
+it is
+\begin{equation}\label{eq:log-action-flat}
+ (z,x)\longmapsto(g_jz,A_jx+v_j/m_j).
+\end{equation}
+
+\begin{lemma}[Fixed points of an affine torus map]\label{lem:affine-fixed}
+Let $A\in\GL(\Lambda)$ have finite order and let $b\in\Lambda\otimes\Q$.
+The affine map $x\mapsto Ax+b$ of $(\Lambda\otimes\R)/\Lambda$ has a fixed
+point if and only if
+\[
+ \phi(b)\in\Z
+ \quad\text{for every }\phi\in V\text{ satisfying }\phi\circ A=\phi.
+\]
+\end{lemma}
+
+\begin{proof}
+A fixed point exists exactly when
+$b\in(A-I)(\Lambda\otimes\R)+\Lambda$.  Necessity is immediate.  For the
+converse, average the powers of $A$ to obtain the rational projection
+$p$ onto $\ker(A-I)_\R$ with kernel $\im(A-I)_\R$.  The lattice
+$p(\Lambda)$ is dual to the invariant lattice
+$\{\phi\in V:\phi A=\phi\}$.  The integrality assumption therefore gives
+$pb=p\lambda$ for some $\lambda\in\Lambda$, so
+$b-\lambda\in\im(A-I)_\R$.
+\end{proof}
+
+\begin{theorem}[The two logarithmic fillings]\label{thm:finite-fillings}
+The map \eqref{eq:log-action} generates a free cyclic action of order
+$m_j$ on $J'_j$.  Its quotient
+\[
+ N_j=J'_j/\langle\wt g_j^{\mathrm{log}}\rangle
+\]
+is a smooth complex threefold, and $s_j^{m_j}$ descends to a proper
+holomorphic map
+\[
+ f_j:N_j\longrightarrow D_j
+\]
+with divisor
+\[
+ f_j^*(p_j)=m_jS_j,
+\]
+where $S_j$ is a smooth compact surface.
+
+Over the punctured disc there is a biholomorphism
+\[
+ G_j:N_j\setminus S_j\longrightarrow J|_{D_j^*}.
+\]
+Under this biholomorphism the zero section of $J$ is represented on the
+cover by
+\begin{equation}\label{eq:zero-section-log}
+ \varsigma_j(z)=-\frac{\log s_j(z)}{2\pi i}\Pi(z)v_j.
+\end{equation}
+Following this section around $s_j$ once counterclockwise changes its
+lift by $-\Pi(z)v_j$.
+\end{theorem}
+
+\begin{proof}
+Because $A_jv_j=v_j$, the $m_j$-th power of
+\eqref{eq:log-action-flat} is translation by $v_j\in\Lambda$, hence the
+identity.  A nontrivial power can have a fixed point only over $z_j$.
+A direct calculation gives
+\[
+ V^{T_1}=V^{T_1^2}=\langle\gamma,\psi_1\rangle,
+ \qquad \psi_1=2u+w+3\delta,
+\]
+and
+\[
+ V^{T_2}=V^{T_2^2}=V^{T_2^3}=\langle\gamma,\psi_2\rangle,
+ \qquad \psi_2=u+w+2\delta.
+\]
+The $k$-th power of \eqref{eq:log-action-flat} has translation part
+$kv_j/m_j$.  For $v_1=\eps$ one has
+$\gamma(v_1)=1$ and $\psi_1(v_1)=0$; hence for $k=1,2$ the value
+$k\gamma(v_1)/3$ is not integral.  For $v_2=-\eps'$ one has
+$\gamma(v_2)=-1$ and $\psi_2(v_2)=0$; hence for $k=1,2,3$ the value
+$-k/4$ is not integral.  The fixed-point criterion in
+\cref{lem:affine-fixed} therefore excludes fixed points for every
+nontrivial power.
+
+A free finite holomorphic action has a smooth quotient.  The function
+$s_j^{m_j}$ is invariant, properness follows from properness of
+$J'_j\to\Delta_j$ and finiteness of the quotient, and its divisor is
+$m_j$ times the reduced central fibre.
+
+On $\Delta_j^*$ define the section
+\[
+ \sigma_j(z)=\frac{\log s_j(z)}{2\pi i}\Pi(z)v_j.
+\]
+Changing the logarithm changes $\sigma_j$ by a period, so it is well
+defined on the torus family.  Translation by $\sigma_j$ conjugates
+$\wt g_j^{\mathrm{log}}$ to the linear deck transformation $\wt g_j$.
+Indeed
+$s_j(g_jz)=e^{-2\pi i/m_j}s_j(z)$ and
+$R_j(z)\Pi(z)v_j=\Pi(g_jz)A_jv_j=\Pi(g_jz)v_j$, so the translation terms
+cancel.  This gives $G_j$.  The zero section in $N_j$-coordinates is
+$-\sigma_j$, proving \eqref{eq:zero-section-log} and the stated drift.
+\end{proof}
+
+\begin{proposition}[Topology of the logarithmic pieces]\label{prop:pi1-Nj}
+The radial contraction of the $s_j$-disc is equivariant and induces a
+deformation retraction $N_j\simeq S_j$.  Its fundamental group has the
+presentation
+\[
+ \pi_1(N_j)=
+ \left\langle \Lambda,\wh g_j\ \middle|\
+ \wh g_j\lambda\wh g_j^{-1}=A_j\lambda,
+ \ \wh g_j^{m_j}=t_{v_j}
+ \right\rangle.
+\]
+For the boundary mapping torus $M_j=f_j^{-1}(|t_j|=\rho)$ one has
+$\pi_1(M_j)=\Lambda\rtimes_{A_j}\Z\langle\wh g_j\rangle$, and the
+kernel of $\pi_1(M_j)\to\pi_1(N_j)$ is normally generated by
+$\wh g_j^{m_j}t_{-v_j}$.
+\end{proposition}
+
+\begin{proof}
+Before quotienting, the local model is smoothly
+$A_0^{(j)}\times\Delta_{s_j}$, where
+$A_0^{(j)}=\C^2/L(z_j)$, and the generator acts by
+\[
+ (x,s_j)\longmapsto(A_jx+v_j/m_j,
+ e^{-2\pi i/m_j}s_j).
+\]
+Radial contraction of the disc is equivariant.  The universal cover of
+$S_j$ is $\Lambda\otimes\R$, and the group generated by translations
+$t_\lambda$ and the affine lift
+$x\mapsto A_jx+v_j/m_j$ has the displayed relations; its $m_j$-th power
+is $t_{v_j}$.  On the boundary, the lift of one $m_j$-th of the clockwise
+base circle is an infinite-order element $\wh g_j$.  Traversing it
+$m_j$ times gives the lattice translation $v_j$ together with the full
+boundary circle of the covering disc.  Killing that boundary circle on
+filling the disc gives exactly the normal relation
+$\wh g_j^{m_j}t_{-v_j}$.
+\end{proof}
+
+\subsection{Gluing}
+Shrink $D_0,D_1,D_2$ so that they are pairwise disjoint and
+\[
+ B=B^\circ\cup D_0\cup D_1\cup D_2.
+\]
+Use the biholomorphism $G_0$ of \cref{prop:cusp-identification} and the
+biholomorphisms $G_1,G_2$ of \cref{thm:finite-fillings}.
+
+Define
+\[
+ X=(J\sqcup N_0\sqcup N_1\sqcup N_2)/\sim,
+\]
+where points in $J|_{D_0^*}$ are identified through $G_0$, and points in
+$N_j\setminus S_j$ through $G_j$.
+
+\begin{theorem}[The compact complex threefold]\label{thm:global-X}
+The space $X$ is a connected compact Hausdorff complex threefold.  The
+local maps glue to a proper surjective holomorphic map
+\[
+ f:X\longrightarrow B=\PP^1
+\]
+with connected fibres.  Over $B^\circ$ its fibres are complex two-tori;
+$f^{-1}(p_0)=W$ is the reduced normal crossings surface of
+\cref{thm:cusp-filling}; and
+\[
+ f^*(p_1)=3S_1,
+ \qquad
+ f^*(p_2)=4S_2.
+\]
+\end{theorem}
+
+\begin{proof}
+The three overlap regions in $J$ are disjoint.  Hence every nonsingleton
+equivalence class consists of exactly two points, and the quotient maps
+from the four pieces are open embeddings.  Their transition maps are the
+biholomorphisms $G_0^{\pm1},G_1^{\pm1},G_2^{\pm1}$, so they define a
+complex atlas on $X$.  Since the four pieces are second countable and their
+images are open, $X$ is second countable.
+
+Points with different images in $B$ are separated by inverse images of
+disjoint base neighbourhoods.  Points over the same base point lie in one
+of the Hausdorff local models, proving that $X$ is Hausdorff.  Properness
+is local on the base and holds for each of the four local maps; therefore
+$f$ is proper and $X=f^{-1}(B)$ is compact.  Connectedness and the fibre
+descriptions follow from the corresponding properties of the local
+models.
+\end{proof}
+

@@ -1,0 +1,445 @@
+\section{The toric filling at the cusp}
+
+\subsection{The infinite toric threefold}
+Let
+\[
+ N'=\Z^2\oplus\Z,
+ \qquad M'=\Hom(N',\Z),
+\]
+and write points of $N'_\R$ as $(y,y_3)$.  Let $\mathcal T_{A_2}$ be
+the triangulation of $\R^2$ with vertices $\Z^2$ and triangles
+\[
+ \{v,v+e_1,v+e_2\},
+ \qquad
+ \{v+e_1,v+e_2,v+e_1+e_2\}.
+\]
+For every cell $P$ let $\wh P$ be the cone over $P\times\{1\}$, and let
+$\Sigma$ be the fan consisting of these cones and their faces.
+
+\begin{lemma}[The toric model]\label{lem:toric-model}
+The collection $\Sigma$ is a smooth countable fan with support
+$(\R^2\times\R_{>0})\cup\{0\}$.  The associated toric space
+$Y=Y_\Sigma$ is a connected Hausdorff second-countable complex
+threefold.  On its dense torus $(\C^*)^3$, use coordinates
+$(x_1,x_2,t_c)$, where $t_c$ is the character corresponding to
+$(0,0,1)\in M'$.  If a maximal cone has vertices $v_0,v_1,v_2$ and
+$m_0,m_1,m_2$ is the dual basis, then
+\[
+ U_\sigma=\Spec\C[\wh\sigma^\vee\cap M']\cong\C^3,
+ \qquad z_i=\chi^{m_i},
+\]
+and
+\begin{equation}\label{eq:toric-local-product}
+ t_c=z_0z_1z_2.
+\end{equation}
+The divisor $Y_0=t_c^{-1}(0)$ is reduced and equals
+$\bigcup_{v\in\Z^2}E_v$.  Each $E_v$ is the toric del Pezzo surface
+$dP_6$, and its toric boundary is the hexagon of six $(-1)$-curves indexed
+by the six edges through $v$.
+\end{lemma}
+
+\begin{proof}
+For the lower triangle the determinant of the three primitive generators
+$(v,1),(v+e_1,1),(v+e_2,1)$ is $1$; for the upper triangle it is $-1$.
+Thus every cone is unimodular.  Two cones meet in the cone over the common
+face of their cells, and the support is as stated because a point
+$(y,y_3)$ with $y_3>0$ lies over the cell containing $y/y_3$.
+Glue the affine toric charts $U_\sigma$ along the open subspaces
+$U_{\sigma\cap\tau}$.  The fan condition implies that if two points
+represented in $U_\sigma$ and $U_\tau$ are identified through a chain of
+charts, then they are already identified in $U_{\sigma\cap\tau}$.
+Consequently the union of any two charts is the toric space of the finite
+fan consisting of the faces of $\sigma$ and $\tau$; it is Hausdorff by
+the standard separation argument for fans \cite[Secs.~1.4,3.1]{Fulton}.
+Thus the full gluing is Hausdorff.  Every chart is smooth, the atlas is
+countable, and all charts meet the dense torus.  Hence $Y$ is a connected
+second-countable complex threefold.
+
+The height character $(0,0,1)$ is nonnegative on the fan and takes value
+one on every ray $(v,1)$.  Hence its divisor is
+$\sum_vE_v$ with multiplicity one.  In a maximal chart,
+$(0,0,1)=m_0+m_1+m_2$, proving
+\eqref{eq:toric-local-product} and reducedness.  The star of the ray
+$(v,1)$, modulo that ray, is the complete smooth fan with rays in the six
+directions
+$\pm e_1,\pm e_2,\pm(e_1-e_2)$, which is the fan of $dP_6$.
+\end{proof}
+
+\subsection{The lattice action}
+Identify the cocharacter lattice of $(x_1,x_2,1)$ with
+$\Lambda_{\mathrm{tor}}$ by $e_1\leftrightarrow\wh w$ and
+$e_2\leftrightarrow\wh\delta$.  For
+$\ol\lambda\in\ol\Lambda$ define
+\[
+ \varphi_{\ol\lambda}(y,y_3)
+ =(y+y_3B_0\ol\lambda,y_3).
+\]
+It preserves the fan and induces a toric automorphism $\Phi_{\ol\lambda}$
+of $Y$.  On the dense torus,
+\[
+ \Phi_{\ol\lambda}(x,t_c)
+ =(t_c^{B_0\ol\lambda}x,t_c).
+\]
+Using \eqref{eq:cusp-exponential}, set
+\begin{equation}\label{eq:Psi-action}
+ \Psi_{\ol\lambda}(x,t_c)
+ =\bigl(c_{\ol\lambda}(t_c)t_c^{B_0\ol\lambda}x,t_c\bigr).
+\end{equation}
+The formula extends holomorphically to $Y$ because it is the product of
+$\Phi_{\ol\lambda}$ with a holomorphic torus translation.  The shears
+$\varphi_{\ol\lambda}$ fix the horizontal cocharacter lattice
+$\Z^2\oplus0$, so the toric automorphisms commute with these translations.
+Since $C(t_c)(\ol\lambda+\ol\mu)=C(t_c)\ol\lambda+C(t_c)\ol\mu$, one has
+$\Psi_{\ol\lambda}\Psi_{\ol\mu}=\Psi_{\ol\lambda+\ol\mu}$.  Thus
+\eqref{eq:Psi-action} defines an action of $\ol\Lambda\cong\Z^2$.
+The compact horizontal torus
+$T_f=\Lambda_{\mathrm{tor}}\otimes S^1$ commutes with this action and
+therefore acts on the quotient constructed below, preserving $t_c$.
+
+For a torus point with $0<|t_c|<1$ define
+\[
+ y(p)=\frac{\log|x(p)|}{\log|t_c(p)|}\in\R^2.
+\]
+Let $\theta_i^\sigma$ be the barycentric coordinates of a maximal
+triangle $\sigma$, and put
+\[
+ \sigma(\eta)=\{y:\theta_i^\sigma(y)>-\eta,
+ \ i=0,1,2\}.
+\]
+For $S\geq1$ write
+$U_\sigma(S)=\{p\in U_\sigma:|z_i(p)|<S\}$.
+
+\begin{lemma}[Toric chart estimates]\label{lem:chart-estimates}
+For a torus point $p$,
+\[
+ p\in U_\sigma(S)
+ \quad\Longleftrightarrow\quad
+ y(p)\in\sigma\left(\frac{\log S}{|\log|t_c(p)||}\right).
+\]
+Every point of $|t_c|<1$ lies in the closed unit polydisc of some maximal
+toric chart.  In particular the sets $U_\sigma(2)$ cover $Y_\eps$, and
+every compact subset has a finite subcover.
+\end{lemma}
+
+\begin{proof}
+In the coordinates of \cref{lem:toric-model},
+\[
+ \log|z_i(p)|=\log|t_c(p)|\,\theta_i^\sigma(y(p)),
+\]
+which gives the first assertion because $\log|t_c|<0$.  For a torus point,
+choose a triangle containing $y(p)$.
+
+Let now $p$ lie in the orbit associated with the cone over a cell $P$.
+For $\bar m\in M'\cap\widehat P^{\perp}$, the assignment
+$\bar m\mapsto\log|\chi^{\bar m}(p)|$ is a real linear functional; under
+the natural pairing it is represented by a vector
+$\operatorname{Log}_P(p)$ in
+$N'_\R/\operatorname{span}_\R\widehat P$.  For a maximal triangle
+$\sigma\supset P$, let $\bar\sigma$ be the image of its cone in this
+quotient.  The cones $\bar\sigma$, as $\sigma$ ranges over the maximal
+triangles containing $P$, cover the quotient vector space: if $v$ is a
+quotient vector and $q_0$ lies in the relative interior of
+$P\times\{1\}$, then for sufficiently small $u>0$ the height-one
+normalization of $q_0+u\widetilde v$ lies in a triangle containing $P$.
+Choose $\sigma$ with
+$-\operatorname{Log}_P(p)\in\bar\sigma$.  If $\bar m$ is a dual
+coordinate on the orbit, then
+$\log|\chi^{\bar m}(p)|=\langle\bar m,\operatorname{Log}_P(p)\rangle$;
+the chosen inclusion therefore makes every nonzero chart coordinate have
+modulus at most one.  This proves the second assertion.  The last assertion
+follows from compactness.
+\end{proof}
+
+\begin{theorem}[Cusp filling]\label{thm:cusp-filling}
+For sufficiently small $\eps>0$, the action of $\ol\Lambda$ on
+\[
+ Y_\eps=\{|t_c|<\eps\}\subset Y
+\]
+is free and properly discontinuous.  The quotient
+\[
+ N_0=Y_\eps/\ol\Lambda
+\]
+is a connected Hausdorff complex threefold, and $t_c$ descends to a proper
+surjective holomorphic map
+\[
+ f_0:N_0\longrightarrow\Delta_0=\{|t_c|<\eps\}.
+\]
+It is a submersion away from $0$, and its nonzero fibres are the tori of
+\cref{cor:smooth-family}.  The central fibre
+\[
+ W=f_0^{-1}(0)
+\]
+is reduced, irreducible and has normal crossings.  Its normalization is
+$dP_6$; the normalization map identifies opposite sides of the
+anticanonical hexagon.  The double locus consists of three rational curves
+through two triple points.
+
+Moreover
+\[
+ \pi_1(N_0)\cong\ol\Lambda,
+\]
+the inclusion of a nearby fibre sends $\Lambda$ to
+$\ol\Lambda=\Lambda/\Lambda_{\mathrm{tor}}$, and the loop obtained by
+holding $(x_1,x_2)=(1,1)$ and circling $t_c=0$ is null-homotopic in $N_0$.
+\end{theorem}
+
+\begin{proof}
+Put
+\[
+ R(t_c)=-2\pi\Im C(t_c),
+ \qquad
+ B_{t_c}=B_0+\frac{R(t_c)}{\log|t_c|}.
+\]
+Choose $\eps$ so small that
+$\|B_{t_c}-B_0\|\leq\frac12$ for $0<|t_c|<\eps$.
+Since $B_0$ is orthogonal in the chosen bases,
+\begin{equation}\label{eq:Bt-bound}
+ |B_{t_c}\ol\lambda|\geq\frac12|\ol\lambda|.
+\end{equation}
+
+\smallskip
+\noindent\emph{Freeness.}
+On the dense torus, a fixed point of $\Psi_{\ol\lambda}$ with
+$\ol\lambda\ne0$ would satisfy
+\[
+ \log|t_c|\,B_0\ol\lambda+R(t_c)\ol\lambda=0,
+\]
+which contradicts the choice of $\eps$.  On $Y_0$, the action sends the
+orbit attached to a cell $P$ to the orbit attached to
+$P+B_0\ol\lambda$.  No nonzero translation preserves a bounded cell, so
+there are no fixed points there either.
+
+\smallskip
+\noindent\emph{Proper discontinuity.}
+Equation \eqref{eq:Psi-action} gives, on the dense torus,
+\begin{equation}\label{eq:position-translation}
+ y(\Psi_{\ol\lambda}p)=y(p)+B_{t_c(p)}\ol\lambda.
+\end{equation}
+Fix maximal triangles $\sigma,\sigma'$.  By
+\cref{lem:chart-estimates}, the positions of torus points in
+$U_\sigma(2)\cap Y_\eps$ and $U_{\sigma'}(2)\cap Y_\eps$ lie in
+bounded sets $\sigma(\eta_0)$ and $\sigma'(\eta_0)$, where
+$\eta_0=\log2/|\log\eps|$.  If
+$\Psi_{\ol\lambda}U_\sigma(2)$ meets $U_{\sigma'}(2)$, density of
+the torus in every chart supplies a torus point in the intersection.
+Then
+\[
+ \frac12|\ol\lambda|
+ \leq |B_{t_c}\ol\lambda|
+ \leq
+ \sup\{|a-b|:a\in\sigma'(\eta_0),\ b\in\sigma(\eta_0)\},
+\]
+so only finitely many $\ol\lambda$ are possible.  A compact subset is
+covered by finitely many $U_\sigma(2)$; therefore only finitely many of
+its translates meet it.  This is proper discontinuity.
+
+The orbit space is Hausdorff and the orbit map is a covering.  If $K$ is
+a compact neighbourhood of a point $p$, proper discontinuity leaves only
+finitely many nontrivial translates of $K$ that meet $K$; freeness and
+Hausdorffness allow $K$ to be shrunk to an open neighbourhood disjoint
+from all its nontrivial translates.  The same finite-translate argument
+separates two distinct orbits.  Since all deck transformations are
+biholomorphic, the quotient is a complex manifold.  The set $Y_\eps$ is connected: in the coordinates of a maximal chart,
+$U_\sigma\cap Y_\eps=\{|z_0z_1z_2|<\eps\}$ is star-shaped and meets
+the connected dense set
+$(\C^*)^2\times\{0<|t_c|<\eps\}$.  It is second countable, and the open
+quotient map shows that $N_0$ is second countable as well.  Hence $N_0$ is
+a connected complex threefold.
+
+\smallskip
+\noindent\emph{Properness.}
+Fix $0<\eps_1<\eps$.  The matrices $B_{t_c}$ and their inverses are
+uniformly bounded for $0<|t_c|\leq\eps_1$.  Given a torus point $p$,
+put $u=B_{t_c}^{-1}y(p)$ and choose $\ol\lambda\in\Z^2$ with
+$|u+\ol\lambda|_\infty\leq1/2$.  Then
+\[
+ |y(\Psi_{\ol\lambda}p)|
+ =|B_{t_c}(u+\ol\lambda)|
+ \leq C
+\]
+for a constant independent of $p$.  Choose the finite set of maximal
+triangles meeting the closed ball $\overline{B}(0,C+2)$ and, in each
+corresponding chart, the compact unit polydisc
+$\{|z_i|\leq1,\ |t_c|\leq\eps_1\}$.  By
+\cref{lem:chart-estimates}, every translated torus point above the closed
+disc lies in their union.
+
+For a point of $Y_0$ in the orbit attached to a cell $P$, choose a vertex
+$v$ of $P$.  Unimodularity of $B_0$ gives $\ol\lambda$ with
+$B_0\ol\lambda=-v$, so the translated cell contains $0$ and is a face
+of one of the finitely many triangles adjacent to $0$.  Enlarging the
+preceding compact union by the corresponding closed chart polydiscs gives
+a compact set $K_0$ meeting every orbit over $|t_c|\leq\eps_1$.
+Therefore
+$f_0^{-1}(|t_c|\leq\eps_1)$ is the compact image of $K_0$.  Any compact
+subset of the open disc lies in such a closed subdisc, proving that $f_0$
+is proper.
+
+\smallskip
+\noindent\emph{The fibres and local structure.}
+For $t_c\ne0$, choose $s$ with $e^{2\pi is}=t_c$.  The exponential map
+$\C^2\to(\C^*)^2$ identifies the quotient fibre with
+\[
+ \C^2/\bigl(\Z^2+(sB_0+C(t_c))\Z^2\bigr)
+ =\C^2/\Pi(z)\Lambda,
+\]
+where $s=s(z)$; this is the torus family of
+\cref{cor:smooth-family}.  These fibres exist
+for every $0<|t_c|<\eps$, while $Y_0$ is nonempty, so $f_0$ is
+surjective.  On $t_c\ne0$ the character $t_c:(\C^*)^3\to\C^*$ is a
+submersion, and the quotient map is locally biholomorphic.  Hence $f_0$
+is a submersion away from the origin.  Finally, suppose that exactly the coordinates indexed by a nonempty set
+$I\subset\{0,1,2\}$ vanish at a chosen point.  The product of the remaining
+coordinates is a holomorphic unit; absorbing that unit into one coordinate
+indexed by $I$, \eqref{eq:toric-local-product} gives local coordinates on
+$N_0$ in which $f_0$ is $z_0$, $z_0z_1$, or $z_0z_1z_2$, according as
+$|I|=1,2,3$.  Thus $W$ is reduced and has normal crossings.
+
+Because $B_0\ol\Lambda=\Z^2$, the action on the height-one lattice
+is the full translation action.  Every cell has a vertex, so every toric
+orbit in $Y_0$ is equivalent to an orbit contained in $E_0$; hence the map
+$E_0\to W$ is surjective.  It is injective on the open torus orbit.  Two
+orbits in $E_0$ can be identified only when cells $P,P'$ containing $0$
+satisfy $P'=P+v$ for a nonzero integral translation.  For edges this
+forces $P=\{0,v\}$ and $P'=\{0,-v\}$.  No nonzero translation preserves
+an edge, so each boundary curve maps isomorphically to its image.  Thus
+the six boundary curves are identified in the three opposite pairs and no
+other curve identifications occur.  For triangles, the six triangles through $0$ fall into two
+translation orbits, alternating around the hexagon; their images are the
+two triple points.  The fibres of $E_0\to W$ are therefore finite.  The map is proper because
+$E_0$ is compact and $W$ is Hausdorff; a proper holomorphic map with finite
+fibres is finite.  Since $E_0$ is irreducible and maps onto $W$, the surface
+$W$ is irreducible.  The finite map $E_0\to W$ is generically one-to-one,
+with normal source and reduced target; it is therefore the normalization.  This proves the stated
+description of the double and triple loci.
+
+\smallskip
+\noindent\emph{Fundamental group.}
+The toric threefold $Y$ is simply connected.  For $n\ge1$, let
+$\Sigma_n$ be the finite subfan consisting of the cones over the cells of
+$\mathcal T_{A_2}$ contained in the square $[-n,n]^2$, together with all
+their faces.  The corresponding toric spaces $Y_{\Sigma_n}$ form an
+increasing open cover of $Y$.  Each contains the rays through
+$(0,0,1),(1,0,1),(0,1,1)$, which generate $N'$ over $\Z$.  The standard
+toric fundamental-group formula \cite[Sec.~3.2]{Fulton} therefore gives
+$\pi_1(Y_{\Sigma_n})=0$.  Every loop has compact image and hence lies
+in some $Y_{\Sigma_n}$, so $\pi_1(Y)=0$.
+
+For $0<u\leq1$, the torus element $(1,1,u)\in(\C^*)^3$ acts on $Y$ and
+satisfies $t_c((1,1,u)\cdot p)=u\,t_c(p)$.  A loop in $Y_\eps$ bounds a
+disc in $Y$; for $u>0$ sufficiently small, translating that disc by
+$(1,1,u)$ places it in $Y_\eps$.  On the boundary, the path of torus
+elements $(1,1,u_s)$, with $u_s$ decreasing from $1$ to $u$, gives a
+homotopy inside $Y_\eps$ from the original loop to the translated one.
+Hence $Y_\eps$ is simply connected.
+Therefore the covering $Y_\eps\to N_0$ is universal and
+$\pi_1(N_0)=\ol\Lambda$.
+
+On a nonzero fibre the covering $(\C^*)^2\to f_0^{-1}(t_c)$ has deck group
+$\ol\Lambda$, so the induced map on fundamental groups is the projection
+$\Lambda\to\ol\Lambda$.  Finally, the curve
+$\{(1,1,t_c):|t_c|<\eps\}$ is a holomorphic disc in a toric chart; its
+boundary is the stated meridian, which is therefore null-homotopic.
+\end{proof}
+
+
+\begin{proposition}[Identification over the punctured cusp disc]
+\label{prop:cusp-identification}
+After decreasing $\eps$ if necessary, put
+$U_\eps=U_r\cap\pi^{-1}(D_0^*)$.  The map
+\begin{equation}\label{eq:cusp-exp-map}
+ E_0^{\exp}:U_\eps\times\C^2\longrightarrow
+ Y_\eps\cap(\C^*)^3,
+ \qquad
+ E_0^{\exp}(z,\zeta)=
+ \bigl(e^{2\pi i\zeta_1},e^{2\pi i\zeta_2},e^{2\pi is(z)}\bigr),
+\end{equation}
+induces a biholomorphism
+\begin{equation}\label{eq:G0}
+ G_0:J|_{D_0^*}\xrightarrow{\sim}N_0\setminus W,
+ \qquad D_0^*=\{0<|t_c|<\eps\}.
+\end{equation}
+It identifies the marking $H_1(F;\Z)=\Lambda$ on both sides and carries the
+zero section to the section represented by $(x_1,x_2)=(1,1)$.  The latter
+extends across $t_c=0$ as a holomorphic section of $f_0$, meeting $W$ in
+its smooth locus.
+\end{proposition}
+
+\begin{proof}
+Let $\wt g_0(z,\zeta)=(g_0z,\zeta)$; the latter
+formula follows from $R_0=I_2$.  Let $H$ be the subgroup generated by
+$\wt g_0$ and the translations $t_\lambda$ with
+$\lambda\in\Lambda_{\mathrm{tor}}$.  It is normal in
+$\Lambda\rtimes\langle g_0\rangle$: conjugation by $\wt g_0$ preserves
+the translations by $\Lambda_{\mathrm{tor}}$, while
+\[
+ t_\mu\,\wt g_0\,t_\mu^{-1}
+ =t_{\mu-M_0\mu}\,\wt g_0\in H
+ \qquad(\mu\in\Lambda),
+\]
+because $(M_0-I)\Lambda\subset\Lambda_{\mathrm{tor}}$.
+
+The map $s:U_\eps\to\{\Im s>c\}$ is a biholomorphism and satisfies
+$s\circ g_0=s-1$.  Hence the last coordinate in
+\eqref{eq:cusp-exp-map} is the universal covering of the punctured disc,
+with deck group generated by $g_0$.  The first two coordinates are the
+ordinary exponential covering $\C^2\to(\C^*)^2$, whose deck lattice is
+$\Z^2=\Pi(z)\Lambda_{\mathrm{tor}}$.  It follows that
+$E_0^{\exp}$ is a surjective local biholomorphism and that its fibres are
+exactly the $H$-orbits.
+
+Write $\lambda=\lambda_{\mathrm{tor}}+\lambda'$ and let
+$\ol\lambda$ be its image in $\ol\Lambda$.  By
+\eqref{eq:cusp-normal-form} and \eqref{eq:cusp-exponential},
+\[
+ E_0^{\exp}\bigl(z,\zeta+\Pi(z)\lambda\bigr)
+ =\Psi_{\ol\lambda}\bigl(E_0^{\exp}(z,\zeta)\bigr).
+\]
+Thus $E_0^{\exp}$ identifies $(U_\eps\times\C^2)/H$ with
+$Y_\eps\cap(\C^*)^3$ and intertwines the residual action
+$(\Lambda\rtimes\langle g_0\rangle)/H\cong\ol\Lambda$ with the action
+$\Psi$ of \eqref{eq:Psi-action}.  Since $U_\eps$ is the only component of
+$\pi^{-1}(D_0^*)$ stabilized by $g_0$ and its other $\Delta$-translates
+are disjoint, the quotient by the full residual action is precisely
+\eqref{eq:G0}.
+
+The construction sends the cycles in $\Lambda_{\mathrm{tor}}$ to the
+fundamental cycles of $(\C^*)^2$ and the quotient
+$\Lambda/\Lambda_{\mathrm{tor}}$ to the deck group of a fibre of
+$N_0\setminus W$; hence it preserves the marking.  Finally
+$E_0^{\exp}(z,0)=(1,1,t_c)$.  In the toric chart corresponding to the
+triangle with vertices $0,e_1,e_2$, the coordinates are
+$(t_c/(x_1x_2),x_1,x_2)$, so
+\[
+ \{(1,1,t_c):|t_c|<\eps\}
+\]
+is a holomorphic disc meeting the divisor $t_c=0$ transversely at a point
+of the open orbit of $E_0$.  Since every $\Psi_{\ol\lambda}$ preserves $t_c$ and the disc contains
+exactly one point over each value of $t_c$, the quotient map is injective
+on this disc.  Its image is therefore the required holomorphic section.
+\end{proof}
+
+\begin{proposition}[Boundary of the cusp piece]\label{prop:cusp-boundary}
+For $0<\rho<\eps$, the boundary
+$\mathcal M_0=f_0^{-1}(|t_c|=\rho)$ is the mapping torus of the monodromy
+$M_0$ on $F$.  With $a_0$ the toric meridian,
+\[
+ \pi_1(\mathcal M_0)=\Lambda\rtimes_{M_0}\Z\langle a_0\rangle.
+\]
+The inclusion $\mathcal M_0\hookrightarrow N_0$ sends
+$\lambda\mapsto\ol\lambda\in\ol\Lambda$ and $a_0\mapsto1$; its
+kernel is the normal closure of
+$\Lambda_{\mathrm{tor}}\cup\{a_0\}$.
+\end{proposition}
+
+\begin{proof}
+Ehresmann's theorem identifies the restriction over the circle with the
+mapping torus of the geometric monodromy, whose translation part is
+isotopic to zero and whose linear part is $M_0$.  The map on the fibre
+fundamental group is the projection established in
+\cref{thm:cusp-filling}, and the meridian is null-homotopic there.  The
+resulting quotient of the displayed semidirect product is
+$\Lambda/\Lambda_{\mathrm{tor}}=\ol\Lambda$, which is
+$\pi_1(N_0)$; hence the stated normal subgroup is exactly the kernel.
+\end{proof}
+

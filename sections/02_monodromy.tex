@@ -1,0 +1,249 @@
+\section{Integral monodromy and the base orbifold}
+
+\subsection{The lattice representation}
+Let $V=\Z^4$ with ordered basis $(\gamma,u,w,\delta)$ and let
+$\Lambda=V^*$ with dual basis
+$(\wh\gamma,\wh u,\wh w,\wh\delta)$.  Evaluation on $\gamma$ is denoted
+by the same letter:
+\[
+ \gamma(a\wh\gamma+b\wh u+c\wh w+d\wh\delta)=a.
+\]
+Set
+\[
+T_1=
+\begin{pmatrix}
+1&0&-6&2\\
+0&-1&1&1\\
+0&-1&0&1\\
+0&0&0&1
+\end{pmatrix},
+\qquad
+T_2=
+\begin{pmatrix}
+1&6&0&-3\\
+0&0&-1&1\\
+0&1&0&0\\
+0&0&0&1
+\end{pmatrix}.
+\]
+For $T\in\GL(V)$ write $A(T)=(T^{-1})^t\in\GL(\Lambda)$, and put
+$A_j=A(T_j)$.
+
+\begin{proposition}[Integral linear algebra]\label{prop:linear-algebra}
+The following statements hold.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $T_1$ and $T_2$ have exact orders $3$ and $4$, respectively, and
+\[
+T_0:=(T_1T_2)^{-1}
+ =\begin{pmatrix}
+1&0&0&1\\
+0&1&-1&0\\
+0&0&1&0\\
+0&0&0&1
+\end{pmatrix}=I+N,
+\qquad N^2=0,
+\]
+with
+\[
+N\gamma=Nu=0,\qquad Nw=-u,\qquad N\delta=\gamma.
+\]
+\item In the dual basis,
+\[
+\begin{aligned}
+A_1\wh\gamma&=\wh\gamma+6\wh u-6\wh w-2\wh\delta,
+&A_1\wh u&=-\wh w+\wh\delta,
+&A_1\wh w&=\wh u-\wh w,
+&A_1\wh\delta&=\wh\delta,\\
+A_2\wh\gamma&=\wh\gamma-6\wh w+3\wh\delta,
+&A_2\wh u&=\wh w,
+&A_2\wh w&=-\wh u+\wh\delta,
+&A_2\wh\delta&=\wh\delta.
+\end{aligned}
+\]
+Writing $M_0=A(T_0)$, one has
+\[
+M_0\wh\gamma=\wh\gamma-\wh\delta,
+\quad M_0\wh u=\wh u+\wh w,
+\quad M_0\wh w=\wh w,
+\quad M_0\wh\delta=\wh\delta,
+\]
+and $A_1A_2M_0=I$.
+\item Put
+\[
+ \Lambda_{\mathrm{tor}}=\langle\wh w,\wh\delta\rangle,
+ \qquad \ol\Lambda=\Lambda/\Lambda_{\mathrm{tor}}.
+\]
+Then
+\[
+\ker(M_0-I)=\im(M_0-I)=\Lambda_{\mathrm{tor}},
+\]
+and the induced map
+\[
+ B_0:\ol\Lambda\longrightarrow\Lambda_{\mathrm{tor}},
+ \qquad B_0\ol{\wh\gamma}=-\wh\delta,
+ \quad B_0\ol{\wh u}=\wh w,
+\]
+is unimodular.
+\item The vectors
+\[
+ \eps=\wh\gamma+2\wh u-4\wh w,
+ \qquad
+ \eps'=\wh\gamma+3\wh u-3\wh w
+\]
+satisfy
+\[
+ \Lambda^{A_1}=\langle\eps,\wh\delta\rangle,
+ \qquad
+ \Lambda^{A_2}=\langle\eps',\wh\delta\rangle.
+\]
+We fix the twist vectors
+\[
+ v_1=\eps,
+ \qquad v_2=-\eps'.
+\]
+Thus $\gamma(v_1)=1$ and $\gamma(v_2)=-1$.
+\item If $G=\langle T_1,T_2\rangle$, then
+\[
+ V^G=\Z\gamma,
+ \qquad
+ \sum_{g\in G}\im(g-I)=\langle\gamma,u,w\rangle,
+\]
+while
+\[
+ \Lambda^G=\Z\wh\delta,
+ \qquad
+ \sum_{g\in G}\im(A(g)-I)=\ker\gamma.
+\]
+In particular the coinvariants $V_G$ and $\Lambda_G$ are free of rank one.
+The smallest $\langle A_1,A_2\rangle$-invariant subgroup of $\Lambda$
+containing $\Lambda_{\mathrm{tor}}$ is $\ker\gamma$.
+\item Set
+\[
+ q=uw+6\gamma\delta,
+ \qquad
+ \vol=\gamma uw\delta.
+\]
+Then
+\[
+ (\textstyle\bigwedge^kV)^G=
+ \begin{cases}
+ \Z,&k=0,\\
+ \Z\gamma,&k=1,\\
+ \Z q,&k=2,\\
+ \Z\gamma uw,&k=3,\\
+ \Z\vol,&k=4,
+ \end{cases}
+\]
+and the coinvariants are
+\[
+ V_G=\Z[\delta],
+ \quad
+ (\textstyle\bigwedge^2V)_G=\Z[\gamma\delta],
+ \quad [uw]=6[\gamma\delta],
+ \quad
+ (\textstyle\bigwedge^3V)_G=\Z[uw\delta],
+ \quad
+ (\textstyle\bigwedge^4V)_G=\Z[\vol].
+\]
+Finally
+\[
+\begin{aligned}
+ V^{T_0}&=\langle\gamma,u\rangle,\\
+ (\textstyle\bigwedge^2V)^{T_0}
+ &=\langle\gamma u,\gamma\delta,uw,\gamma w-u\delta\rangle,\\
+ (\textstyle\bigwedge^3V)^{T_0}
+ &=\langle\gamma uw,\gamma u\delta\rangle.
+\end{aligned}
+\]
+All displayed invariant subgroups are saturated, and all displayed
+coinvariant groups are torsion-free.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Direct multiplication gives $T_1^3=T_2^4=I$ and the displayed formula
+for $T_0$.  The formulas for $A_1,A_2,M_0$ follow by taking inverse
+transposes.  For
+$\lambda=a\wh\gamma+b\wh u+c\wh w+d\wh\delta$,
+\[
+ (M_0-I)\lambda=-a\wh\delta+b\wh w,
+\]
+which proves (iii).  Solving $(A_j-I)\lambda=0$ gives
+$b=2a,c=-4a$ for $j=1$, and $b=3a,c=-3a$ for $j=2$, proving (iv).
+
+For (v), solving $T_jx=x$ gives
+\[
+ V^{T_1}=\langle\gamma,2u+w+3\delta\rangle,
+ \qquad
+ V^{T_2}=\langle\gamma,u+w+2\delta\rangle,
+\]
+whose intersection is $\Z\gamma$.  The images of $T_j-I$ contain
+$u,w,2\gamma,3\gamma$, hence generate
+$\langle\gamma,u,w\rangle$.  Dually, the images of $A_j-I$ generate
+$\langle\wh u,\wh w,\wh\delta\rangle=\ker\gamma$.  The last assertion
+follows because an invariant subgroup containing $\wh w$ contains
+$A_1\wh w=\wh u-\wh w$, hence $\wh u$ and $\wh\delta$.
+
+The exterior-power calculations in (vi) are given in
+\cref{sec:matrix-tables}.  The Smith normal forms there have only unit
+nonzero elementary divisors, which proves the asserted saturation.  The
+$T_0$-invariants also follow directly from
+$Nw=-u$, $N\delta=\gamma$, and $N\gamma=Nu=0$.
+\end{proof}
+
+\subsection{The orbifold curve}
+Let $B=\PP^1$ with affine coordinate $t$, and put
+\[
+ p_1=0,
+ \qquad p_2=1,
+ \qquad p_0=\infty,
+ \qquad t_c=t^{-1},
+ \qquad B^\circ=B\setminus\{p_0,p_1,p_2\}.
+\]
+Let $\mathcal B$ be the orbifold with underlying curve $B$, cone orders
+$3$ and $4$ at $p_1,p_2$, and a cusp at $p_0$.
+
+\begin{proposition}[Uniformization]\label{prop:uniformization}
+There are a copy $\HH_z$ of the upper half-plane, a Fuchsian group
+$\Delta<\mathrm{PSL}_2(\R)$, and a holomorphic quotient map
+\[
+ \pi:\HH_z\longrightarrow B\setminus\{p_0\}
+\]
+with the following properties.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $\HH_z/\Delta\cong B\setminus\{p_0\}$ as orbifolds.
+\item There are $z_j\in\pi^{-1}(p_j)$ and generators $g_1,g_2$ such that
+\[
+ \Delta=\langle g_1,g_2\mid g_1^3=g_2^4=1\rangle,
+ \qquad g_0=(g_1g_2)^{-1}
+\]
+is primitive parabolic, and
+\[
+ g_j'(z_j)=e^{-2\pi i/m_j},
+ \qquad (m_1,m_2)=(3,4).
+\]
+\item For sufficiently small $r>0$, the component
+$U_r\subset\pi^{-1}(0<|t_c|<r)$ accumulating at the fixed point of
+$g_0$ is simply connected, invariant under $\langle g_0\rangle$, disjoint
+from all its other $\Delta$-translates, and
+\[
+ U_r/\langle g_0\rangle\cong\{0<|t_c|<r\}.
+\]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+This is the standard uniformization of the hyperbolic triangle orbifold of
+signature $(0;3,4,\infty)$; see \cite[Chs.~7,10]{Beardon}.  Choose a hyperbolic triangle with angles
+$\pi/3,\pi/4,0$ and take the orientation-preserving subgroup of its
+reflection group.  If the vertices are ordered counterclockwise, the
+inverses of the positive rotations about the finite vertices give
+$g_1,g_2$ with the stated derivatives, while $(g_1g_2)^{-1}$ is the
+primitive cusp generator.  The standard disjoint-horodisc theorem for a
+cofinite Fuchsian group gives (iii).
+\end{proof}
+
+The homomorphism $\rho_V:\Delta\to\SL(V)$ is defined by
+$\rho_V(g_j)=T_j$.  The monodromy on $\Lambda$ will be the contragredient
+representation $g_j\mapsto A_j$, $g_0\mapsto M_0$.
+

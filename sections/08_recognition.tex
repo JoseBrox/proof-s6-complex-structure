@@ -1,0 +1,31 @@
+\section{Recognition of the smooth manifold}
+
+\begin{lemma}\label{lem:homology-sphere}
+Let $M$ be a closed simply connected $n$-manifold, $n\ge2$, with the
+integral homology of $S^n$.  Then $M$ is homotopy equivalent to $S^n$.
+\end{lemma}
+
+\begin{proof}
+If $k<n$ were the least integer with $\pi_k(M)\ne0$, the Hurewicz
+theorem would give $\pi_k(M)\cong H_k(M;\Z)=0$, a contradiction.
+Thus $\pi_i(M)=0$ for $1\le i<n$, and the Hurewicz theorem in degree
+$n$ gives an isomorphism $\pi_n(M)\to H_n(M;\Z)\cong\Z$.  Choose
+$u:S^n\to M$ representing a class mapping to a generator.  The map $u$
+is an isomorphism on integral homology.  Since both spaces have the
+homotopy type of CW complexes and are simply connected, the homology
+Whitehead theorem implies that $u$ is a homotopy equivalence
+\cite[Ch.~4]{Hatcher}.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:main}]
+By \cref{thm:pi1,thm:integral-cohomology,lem:homology-sphere}, the closed
+smooth manifold underlying $X$ is a homotopy six-sphere.  For $n\ge5$, the group $\Theta_n$ consists of the oriented
+$h$-cobordism classes of homotopy $n$-spheres.  In dimensions at least five, the smooth
+$h$-cobordism theorem makes two such spheres diffeomorphic whenever they
+represent the same class \cite{Milnor}.  Kervaire and Milnor computed
+$\Theta_6=0$ \cite{KM}.  Hence $X$ is
+orientation-preservingly diffeomorphic to the standard $S^6$.  Transporting
+the complex atlas of $X$ through such a diffeomorphism gives an integrable
+complex structure on $S^6$.
+\end{proof}
+
