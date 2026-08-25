@@ -7,7 +7,8 @@ The original proof was produced by an AI model internal to Anthropic and communi
 **Status.** This is a research manuscript under active verification. It has been checked repeatedly for internal consistency and build correctness, but it has not yet received independent expert refereeing. It should therefore be cited and discussed as an unverified manuscript rather than as an established theorem.
 
 - [LaTeX source](proof.tex)
-- [Automated PDF builds](https://github.com/JoseBrox/proof-s6-complex-structure/actions/workflows/latex.yml) — each successful run uploads `proof.pdf` as the `proof-pdf` artifact.
+- [Automated PDF builds](https://github.com/JoseBrox/proof-s6-complex-structure/actions/workflows/latex.yml) — each successful run uploads `proof.pdf` as the `proof-pdf` artifact
+- [Stable compiled PDF](proof_stable.pdf)
 - [Circulated original manuscript](https://alpo.ge/s6.pdf)
 
 ## Build
